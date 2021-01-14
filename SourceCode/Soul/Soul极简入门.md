@@ -81,11 +81,11 @@ soul-admin 的数据流程图：
 
 ![image-20210115023311766](picture/Soul%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8/image-20210115023311766.png)
 
-访问 soul-examples-http 项目的请求，http://localhost:8188/order/findById?id=3，响应结果符合预期。
+访问 soul-examples-http 项目的请求，http://localhost:8188/order/findById?id=3 ，响应结果符合预期。
 
 ![image-20210115023452513](picture/Soul%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8/image-20210115023452513.png)
 
-通过 soul-bootstrap 网关访问 soul-examples-http 项目，soul-bootstrap 项目的端口为9195，soul-examples-http 项目 配置的soul.http.contextPath 为 /http ，所以访问 http://localhost:9195/http/order/findById?id=3，响应结果符合预期。
+通过 soul-bootstrap 网关访问 soul-examples-http 项目，soul-bootstrap 项目的端口为9195，soul-examples-http 项目 配置的soul.http.contextPath 为 /http ，所以访问 http://localhost:9195/http/order/findById?id=3 ，响应结果符合预期。
 
 ![image-20210115024552579](picture/Soul%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8/image-20210115024552579.png)
 
