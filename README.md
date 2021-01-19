@@ -7,4 +7,5 @@
         - [soul-examples-http体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/03.soul-examples-http%E4%BD%93%E9%AA%8C.md)
         - [soul-examples-apache-dubbo-service体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/04.soul-examples-apache-dubbo-service%E4%BD%93%E9%AA%8C.md)
         - [soul-examples-sofa体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/05.soul-examples-sofa%E4%BD%93%E9%AA%8C.md)
+        - [soul-examples-springcloud体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/06.soul-examples-springcloud%E4%BD%93%E9%AA%8C.md)
 
