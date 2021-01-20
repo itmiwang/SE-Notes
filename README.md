@@ -8,4 +8,5 @@
         - [soul-examples-apache-dubbo-service体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/04.soul-examples-apache-dubbo-service%E4%BD%93%E9%AA%8C.md)
         - [soul-examples-sofa体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/05.soul-examples-sofa%E4%BD%93%E9%AA%8C.md)
         - [soul-examples-springcloud体验](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/06.soul-examples-springcloud%E4%BD%93%E9%AA%8C.md)
+        - [Soul-数据同步机制-websocket同步](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/07.Soul-%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6-websocket%E5%90%8C%E6%AD%A5.md)
 
