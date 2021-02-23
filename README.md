@@ -1,5 +1,10 @@
 ## SE-Notes文档目录
 
+- JavaAdvanced
+    - JVM
+        - [字节码技术](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/%E5%AD%97%E8%8A%82%E7%A0%81%E6%8A%80%E6%9C%AF.md)
+        - [JVM类加载器](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.md)
+        - [GC垃圾回收](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/GC%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md)
 - SourceCode
     - Soul
         - [初识Soul](https://github.com/itmiwang/SE-Notes/blob/main/SourceCode/Soul/01.%E5%88%9D%E8%AF%86Soul.md)
