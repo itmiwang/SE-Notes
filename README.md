@@ -12,7 +12,7 @@
 
     - NIO与Netty入门
         - [NIO模型](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/NIO%E4%B8%8ENetty%E5%85%A5%E9%97%A8/01.NIO%E6%A8%A1%E5%9E%8B.md)
-        - Netty和API网关
+        - [Netty和API网关](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/NIO%E4%B8%8ENetty%E5%85%A5%E9%97%A8/02.Netty%E5%92%8CAPI%E7%BD%91%E5%85%B3.md)
 
     
 
