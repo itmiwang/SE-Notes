@@ -6,7 +6,7 @@
 
         - [字节码技术](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/%E5%AD%97%E8%8A%82%E7%A0%81%E6%8A%80%E6%9C%AF.md)
 
-        - [JVM类加载器](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.md)
+        - [Java虚拟机是如何加载Java类的](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/03.Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%8A%A0%E8%BD%BDJava%E7%B1%BB%E7%9A%84.md)
 
         - [GC垃圾回收](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/GC%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md)
 
