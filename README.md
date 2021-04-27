@@ -25,6 +25,8 @@
             - [高并发系统设计概论](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/01.%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A6%82%E8%AE%BA.md)
         - 基础篇
             - [高并发系统通用设计方法](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/02.%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95.md)
+            - [认识分层架构及如何提升系统性能](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/03.%E8%AE%A4%E8%AF%86%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD.md)
+            - 系统如何保证高可用
         - 演进篇
             - 数据库篇
             - 缓存篇
