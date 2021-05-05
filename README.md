@@ -7,6 +7,7 @@
         - [Java面向对象设计](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/%E6%B7%B1%E4%BC%BC%E6%B5%B7/02.Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1.md)
         - Java函数式设计
         - Java模块化设计
+        - Java集合框架运用
     - JVM
 
         - [字节码技术](https://github.com/itmiwang/SE-Notes/blob/main/JavaAdvanced/JVM/%E5%AD%97%E8%8A%82%E7%A0%81%E6%8A%80%E6%9C%AF.md)
