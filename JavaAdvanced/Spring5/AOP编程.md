@@ -8,7 +8,7 @@
 
 ###### 1.1 问题
 
-- 在JavaEE分层开发开发中，那个层次对于我们来讲最重要
+- 在JavaEE分层开发开发中，哪个层次对于我们来讲最重要
 
   ~~~markdown
   DAO ---> Service --> Controller 
@@ -24,18 +24,18 @@
      业务运算
      DAO调用
   2. 额外功能 
-     1. 不属于业务
+     1. 不属于核心业务
      2. 可有可无
      3. 代码量很小 
      
-     事务、日志、性能...
+     事务、日志（记录用户重要操作的流水账）、性能...
      
   ~~~
 
 - 额外功能书写在Service层中好不好？
 
   ~~~markdown
-  Service层的调用者的角度（Controller):需要在Service层书写额外功能。
+  Service层的调用者的角度（Controller):需要在Service层书写额外功能。比如至少需要事务
                            软件设计者：Service层不需要额外功能
                            
   ~~~
@@ -66,7 +66,7 @@
 ###### 1.3 代理开发的核心要素
 
 ~~~markdown
-代理类 = 目标类(原始类) + 额外功能 + 原始类(目标类)实现相同的接口
+代理类 = 目标类(原始类) + 额外功能 + 和原始类(目标类)实现相同的接口（主要目的是方法一致）
 
 房东 ---> public interface UserService{
                m1
@@ -86,6 +86,16 @@
 **静态代理**：为每一个原始类，手工编写一个代理类 (.java .class)
 
 ![image-20200422114654195](picture/AOP编程/image-20200422114654195.png)
+
+```markdown
+编码核心3步走：
+1. 实现相同接口
+2. 有原始对象
+3. 有额外功能
+4. 调用原始方法
+```
+
+
 
 ###### 1.5 静态代理存在的问题
 
@@ -212,7 +222,7 @@
       1. Spring的工厂通过原始对象的id值获得的是代理对象
       2. 获得代理对象后，可以通过声明接口类型，进行对象的存储
       
-   UserService userService=(UserService)ctx.getBean("userService");
+   UserService userService = (UserService) ctx.getBean("userService");
    
    userService.login("")
    userService.register()
@@ -228,7 +238,7 @@
    
    什么叫动态字节码技术:通过第三个动态字节码框架，在JVM中创建对应类的字节码，进而创建对象，当虚拟机结束，动态字节码跟着消失。
    
-   结论：动态代理不需要定义类文件，都是JVM运行过程中动态创建的，所以不会造成静态代理，类文件数量过多，影响项目管理的问题。
+   结论：动态代理不需要定义类文件，都是JVM运行过程中动态创建的，所以不会造成静态代理下类文件数量过多，影响项目管理的问题。
    ~~~
 
    ![image-20200423165547079](picture/AOP编程/image-20200423165547079.png)
@@ -297,6 +307,9 @@
   ~~~
 
   ~~~java
+  import org.aopalliance.intercept.MethodInterceptor;
+  import org.aopalliance.intercept.MethodInvocation;
+  
   public class Arround implements MethodInterceptor {
       /*
            invoke方法的作用:额外功能书写在invoke
@@ -320,18 +333,19 @@
   
       @Override
       public Object invoke(MethodInvocation invocation) throws Throwable {
-            System.out.println("-----额外功能 log----");
+            System.out.println("-----额外功能 log, 运行在原始方法执行之前----");
             Object ret = invocation.proceed();
-  
+            System.out.println("-----额外功能 log, 运行在原始方法执行之后----");
+          
             return ret;
       }
   }
   
   
   ~~~
-
+  
   额外功能运行在原始方法执行之后
-
+  
   ~~~java
   @Override
   public Object invoke(MethodInvocation invocation) throws Throwable {
@@ -341,9 +355,9 @@
     return ret;
   }
   ~~~
-
+  
   额外功能运行在原始方法执行之前，之后
-
+  
   ~~~java
   什么样的额外功能 运行在原始方法执行之前，之后都要添加？
   事务
@@ -357,9 +371,9 @@
     return ret;
   }
   ~~~
-
+  
   额外功能运行在原始方法抛出异常的时候
-
+  
   ~~~java
   @Override
   public Object invoke(MethodInvocation invocation) throws Throwable {
@@ -377,14 +391,14 @@
     return ret;
   }
   ~~~
-
-  MethodInterceptor影响原始方法的返回值
-
-  ~~~markdown
-  原始方法的返回值，直接作为invoke方法的返回值返回，MethodInterceptor不会影响原始方法的返回值
   
   MethodInterceptor影响原始方法的返回值
-  Invoke方法的返回值，不要直接返回原始方法的运行结果即可。
+  
+  ~~~markdown
+  **原始方法的返回值，直接作为invoke方法的返回值返回，MethodInterceptor不会影响原始方法的返回值**
+  
+  Q:MethodInterceptor影响原始方法的返回值？
+  A:Invoke方法的返回值，不要直接返回原始方法的运行结果即可。
   
   @Override
   public Object invoke(MethodInvocation invocation) throws Throwable {
@@ -564,11 +578,11 @@ exection(* *(..)) ---> 匹配了所有方法    a  b  c
      
      2. execution(* login(..)) and args(String,String)
      
-     注意：与操作不同用于同种类型的切入点函数 
+     注意：与操作不能用于同种类型的切入点函数 
      
      案例：register方法 和 login方法作为切入点 
      
-     execution(* login(..)) or  execution(* register(..))
+     execution(* login(..)) or execution(* register(..))
      
      ~~~
 
@@ -577,7 +591,7 @@ exection(* *(..)) ---> 匹配了所有方法    a  b  c
      ~~~markdown
      案例：register方法 和 login方法作为切入点 
      
-     execution(* login(..)) or  execution(* register(..))
+     execution(* login(..)) or execution(* register(..))
      ~~~
 
 
@@ -600,10 +614,10 @@ POP (Producer Oriented Programing) 面向过程(方法、函数)编程 C
 
 ~~~markdown
 AOP的概念：
-     本质就是Spring得动态代理开发，通过代理类为原始类增加额外功能。
+     本质就是Spring的动态代理开发，通过代理类为原始类增加额外功能。
      好处：利于原始类的维护
 
-注意：AOP编程不可能取代OOP，OOP编程有意补充。
+注意：AOP编程不可能取代OOP，是OOP编程的有意补充。
 ~~~
 
 ##### 2. AOP编程的开发步骤
@@ -636,6 +650,7 @@ AOP的概念：
 1. AOP如何创建动态代理类(动态字节码技术)
 2. Spring工厂如何加工创建代理对象
    通过原始对象的id值，获得的是代理对象
+   （原因是通过Spring工厂对它所生产的对象进行了相应的再加工，参考第五章第3节）
 ~~~
 
 ##### 2. 动态代理类的创建
@@ -987,16 +1002,6 @@ public class UserServiceImpl implements UserService, ApplicationContextAware {
 ![image-20200503162625116](picture/AOP编程/image-20200503162625116.png)
 
  
-
-
-
-
-
- 
-
-##### 
-
-
 
 
 
